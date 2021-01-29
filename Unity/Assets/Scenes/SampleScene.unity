@@ -548,6 +548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1027621818}
+  - component: {fileID: 1027621819}
   m_Layer: 0
   m_Name: Checkpoints
   m_TagString: Untagged
@@ -572,6 +573,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027621819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027621817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b292cb55057f3f4bb4e8bcf441ce320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laps: 0
 --- !u!4 &1394583233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1975949268121636093, guid: 84f35d97a66f9974c914bbfcc0a45424,
@@ -589,10 +603,10 @@ GameObject:
   - component: {fileID: 1404903884}
   - component: {fileID: 1404903883}
   - component: {fileID: 1404903882}
-  - component: {fileID: 1404903881}
-  - component: {fileID: 1404903880}
   - component: {fileID: 1404903885}
   - component: {fileID: 1404903886}
+  - component: {fileID: 1404903887}
+  - component: {fileID: 1404903880}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -600,23 +614,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1404903880
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404903879}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &1404903881
+--- !u!65 &1404903880
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -702,9 +700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d65b8d31557f134eb9c67f3fc1c51f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: {fileID: 0}
-  moveDirection: {x: 0, y: 0, z: 0}
-  gravity: 100
+  speed: 0
+  moveSmoothTime: 0.3
 --- !u!143 &1404903886
 CharacterController:
   m_ObjectHideFlags: 0
@@ -723,6 +720,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1404903887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404903879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d65b8d31557f134eb9c67f3fc1c51f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  moveSmoothTime: 0.3
 --- !u!1001 &1975949267365980732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -734,6 +745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975949268121635971, guid: 84f35d97a66f9974c914bbfcc0a45424,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1975949268121636093, guid: 84f35d97a66f9974c914bbfcc0a45424,
         type: 3}
