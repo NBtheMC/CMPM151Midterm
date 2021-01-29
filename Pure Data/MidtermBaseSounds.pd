@@ -1,4 +1,4 @@
-#N canvas -8 -8 1920 997 10;
+#N canvas 0 0 1920 997 10;
 #X obj 17 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 16 37 \; pd dsp \$1;
@@ -45,10 +45,10 @@
 #X floatatom 539 267 5 0 0 0 - - -;
 #X obj 418 422 phasor~;
 #X obj 539 376 vsl 15 128 0 0.5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X text 490 227 Motorcycle revving;
-#X text 392 210 Change this part;
-#X text 513 244 up and down;
+-1 -1 200 1;
+#X text 586 291 Motorcycle revving;
+#X text 303 230 Change this part;
+#X text 609 308 up and down;
 #X obj 724 565 * 2;
 #X obj 623 609 * 2.002;
 #X obj 695 606 * 4.8;
@@ -112,9 +112,20 @@
 #X floatatom 1216 227 5 0 0 0 - - -;
 #X obj 1095 382 phasor~;
 #X obj 1216 336 vsl 15 128 0 0.5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X text 1190 204;
-#X text 1167 187 Constant Motorcycle sound;
+-1 -1 300 1;
+#X text 1304 194 Constant Motorcycle sound;
+#X obj 1089 112 loadbang;
+#X obj 1147 152 loadbang;
+#X obj 1233 133 loadbang;
+#X msg 1091 153 4;
+#X msg 1220 191 123;
+#X msg 1150 188 221;
+#X obj 468 178 loadbang;
+#X obj 544 189 loadbang;
+#X obj 398 170 loadbang;
+#X msg 414 209 213;
+#X msg 475 229 96;
+#X msg 545 232 309;
 #X connect 0 0 1 0;
 #X connect 2 0 9 0;
 #X connect 3 0 4 0;
@@ -155,3 +166,15 @@
 #X connect 39 0 37 1;
 #X connect 40 0 34 0;
 #X connect 41 0 34 1;
+#X connect 43 0 46 0;
+#X connect 44 0 48 0;
+#X connect 45 0 47 0;
+#X connect 46 0 36 0;
+#X connect 47 0 39 0;
+#X connect 48 0 38 0;
+#X connect 49 0 53 0;
+#X connect 50 0 54 0;
+#X connect 51 0 52 0;
+#X connect 52 0 5 0;
+#X connect 53 0 7 0;
+#X connect 54 0 8 0;
