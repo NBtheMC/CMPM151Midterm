@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class TrackCheckpoints : MonoBehaviour
 {
-    private List<CheckpointSingle> checkpointList;
+    private List<CheckpointSingle> checkpointList = new List<CheckpointSingle>();
     private int nextCheckpointIndex = 0;
     public int laps = 0;
+    private Transform checkpointsTransform;
 
     private void Awake()
     {
-        //initialized list of checkpoints and connects them to the tracker
-        Transform checkpointsTransform = transform.Find("Checkpoints");
+        checkpointsTransform = GetComponent<Transform>();
 
-        foreach(Transform checkPointSingleTransform in checkpointsTransform)
+        //initialized list of checkpoints and connects them to the tracker
+        //checkpointsTransform = transform.Find("Checkpoints");
+
+        foreach (Transform checkPointSingleTransform in checkpointsTransform)
         {
             CheckpointSingle checkpoint = checkPointSingleTransform.GetComponent<CheckpointSingle>();
             checkpoint.setTrackCheckpoints(this);
@@ -24,10 +27,10 @@ public class TrackCheckpoints : MonoBehaviour
     public void CheckpointReached(CheckpointSingle checkpoint)
     {
         //right checkpoint
-        if(checkpointList.IndexOf(checkpoint) == nextCheckpointIndex)
+        if (checkpointList.IndexOf(checkpoint) == nextCheckpointIndex)
         {
             Debug.Log("Right");
-            nextCheckpointIndex = (nextCheckpointIndex + 1)%checkpointList.Count;
+            nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpointList.Count;
             //make checkpoint sound
 
             if (nextCheckpointIndex == 1)
