@@ -1,4 +1,4 @@
-#N canvas 0 0 1920 997 10;
+#N canvas -7 0 958 988 10;
 #X obj 17 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X msg 16 37 \; pd dsp \$1;
@@ -65,7 +65,7 @@
 #X obj 635 524 mtof;
 #X obj 834 771 vline~;
 #X obj 701 821 *~;
-#X obj 679 917 dac~;
+#X obj 658 949 dac~;
 #X msg 654 482 45;
 #X text 793 447 Checkpoint;
 #X msg 833 690 0.5 100 \, 0 500 100;
@@ -126,9 +126,38 @@
 #X msg 414 209 213;
 #X msg 475 229 96;
 #X msg 545 232 309;
-#X obj 684 874 *~;
-#X obj 577 722 vsl 15 128 0 0.5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8800 1;
+#X obj 663 906 *~;
+#X obj 606 775 vsl 15 128 0 0.5 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2300 1;
+#N canvas 218 394 817 485 reverb 0;
+#X obj 311 108 rev3~ 100 90 3000 20;
+#X obj 170 -87 inlet~;
+#X obj 65 131 *~;
+#X floatatom 99 107 5 0 0 0 - - -;
+#X text 133 107 "dry" signal;
+#X obj 168 73 loadbang;
+#X obj 127 244 outlet~;
+#X floatatom 522 185 5 0 0 0 - - -;
+#X obj 609 143 loadbang;
+#X text 556 184 "wet" signal;
+#X obj 356 165 *~;
+#X msg 139 89 0.9;
+#X msg 522 160 0.1;
+#X connect 0 0 10 0;
+#X connect 0 1 10 0;
+#X connect 0 2 10 0;
+#X connect 0 3 10 0;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 1;
+#X connect 5 0 11 0;
+#X connect 7 0 10 1;
+#X connect 8 0 12 0;
+#X connect 10 0 6 0;
+#X connect 11 0 3 0;
+#X connect 12 0 7 0;
+#X restore 679 872 pd reverb;
 #X connect 0 0 1 0;
 #X connect 2 0 9 0;
 #X connect 3 0 4 0;
@@ -156,7 +185,7 @@
 #X connect 26 0 15 0;
 #X connect 26 0 14 0;
 #X connect 27 0 28 1;
-#X connect 28 0 55 1;
+#X connect 28 0 57 0;
 #X connect 30 0 26 0;
 #X connect 32 0 27 0;
 #X connect 33 0 40 0;
@@ -183,3 +212,4 @@
 #X connect 55 0 29 0;
 #X connect 55 0 29 1;
 #X connect 56 0 55 0;
+#X connect 57 0 55 1;
