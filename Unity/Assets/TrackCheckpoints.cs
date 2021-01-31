@@ -32,6 +32,7 @@ public class TrackCheckpoints : MonoBehaviour
             Debug.Log("Right");
             nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpointList.Count;
             //make checkpoint sound
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/checkpoint", nextCheckpointIndex);
 
             if (nextCheckpointIndex == 1)
             {
