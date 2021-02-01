@@ -65,3 +65,7 @@ Unity/Library/ArtifactDB
 Unity/Library
 Unity/Library/ArtifactDB
 *.dwlt
+*.dll
+*.pdb
+Unity/Library/SourceAssetDB
+Unity/Library/StateCache/Hierarchy/d60f23-mainStage.json
