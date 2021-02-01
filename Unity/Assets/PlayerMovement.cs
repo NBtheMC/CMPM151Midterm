@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     public float speed;
     public float moveSmoothTime = .3f;
+    public float steering;
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
 
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * speed * Time.deltaTime;
         controller.Move(velocity);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/velocity", speed);
     }
 
 }
