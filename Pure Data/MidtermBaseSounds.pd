@@ -183,7 +183,7 @@
 #X connect 7 0 5 0;
 #X connect 8 0 5 0;
 #X restore 14 92 pd oscSend;
-#N canvas 779 387 810 481 oscReceive 0;
+#N canvas 579 409 1010 459 oscReceive 0;
 #X text 183 187 UDP packets \, binary output;
 #X obj 55 324 print;
 #X obj 55 282 oscparse;
@@ -202,6 +202,9 @@
 #X obj 254 419 s velocity;
 #X obj 363 417 s collide;
 #X obj 65 194 netreceive -7001 -1;
+#X obj 471 366 route test;
+#X floatatom 472 392 5 0 0 0 - - -;
+#X obj 472 417 s test;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 7 0;
@@ -209,6 +212,7 @@
 #X connect 7 0 11 0;
 #X connect 7 0 12 0;
 #X connect 7 0 13 0;
+#X connect 7 0 18 0;
 #X connect 8 0 15 0;
 #X connect 9 0 16 0;
 #X connect 11 0 9 0;
@@ -216,10 +220,23 @@
 #X connect 13 0 5 0;
 #X connect 17 0 2 0;
 #X connect 17 0 3 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
 #X restore 11 123 pd oscReceive;
 #X obj 418 177 r velocity;
 #X obj 418 199 + 213 * 20;
 #X obj 696 323 r checkpoint;
+#X obj 1159 583 r test;
+#X msg 1146 645 activated;
+#X obj 1145 674 print;
+#X text 153 326 creation arguments are OSC address;
+#X text 155 287 set message to change OSC address;
+#X floatatom 19 243 5 0 0 0 - - -;
+#X obj 20 327 oscformat PD message;
+#X msg 52 288 set PD message;
+#X obj 20 362 s oscOut;
+#X obj 1147 612 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 1 0;
 #X connect 2 0 9 0;
 #X connect 3 0 4 0;
@@ -290,3 +307,9 @@
 #X connect 67 0 68 0;
 #X connect 68 0 5 0;
 #X connect 69 0 57 0;
+#X connect 70 0 79 0;
+#X connect 71 0 72 0;
+#X connect 75 0 76 0;
+#X connect 76 0 78 0;
+#X connect 77 0 76 0;
+#X connect 79 0 71 0;
