@@ -61,3 +61,7 @@ crashlytics-build.properties
 Unity/Library/ArtifactDB
 Unity/Library/ArtifactDB
 Unity/Library/SourceAssetDB
+Unity/Library/ArtifactDB
+Unity/Library
+Unity/Library/ArtifactDB
+*.dwlt
