@@ -77,3 +77,6 @@ Unity/Library/SourceAssetDB
 *.json
 Unity/Library/SourceAssetDB
 Unity/Library/ArtifactDB
+*.log
+Unity/Library/ArtifactDB
+Unity/Library/SourceAssetDB
