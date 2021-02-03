@@ -1,0 +1,40 @@
+#N canvas 179 148 1226 532 12;
+#X obj 477 141 r on;
+#X text 666 73 0 when Unity is not on;
+#X text 665 99 1 when it starts up;
+#X obj 524 247 *;
+#X obj 580 132 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3300 1;
+#X obj 326 309 *;
+#X obj 294 122 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2800 1;
+#X floatatom 530 332 5 0 0 0 - - -;
+#X obj 478 183 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 583 86 0.5;
+#X obj 586 42 loadbang;
+#X floatatom 324 354 5 0 0 0 - - -;
+#X obj 282 35 loadbang;
+#X msg 279 79 0.3;
+#X obj 207 318 *;
+#X obj 175 131 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3810 1;
+#X floatatom 205 363 5 0 0 0 - - -;
+#X obj 163 44 loadbang;
+#X msg 160 88 0.4;
+#X connect 0 0 8 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 5 0 11 0;
+#X connect 6 0 5 1;
+#X connect 8 0 3 0;
+#X connect 8 0 5 0;
+#X connect 8 0 14 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 1;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
