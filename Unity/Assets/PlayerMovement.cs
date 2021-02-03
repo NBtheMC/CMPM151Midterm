@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * speed * Time.deltaTime;
         controller.Move(velocity);
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/velocity", speed);
+        //OSCHandler.Instance.SendMessageToClient("pd", "/unity/velocity", speed);
         //OSCHandler.Instance.SendMessageToClient("pd", "/unity/test", 1);
     }
 
