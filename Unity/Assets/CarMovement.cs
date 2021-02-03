@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class CarMovement : MonoBehaviour
 {
     private CharacterController controller;
-
+    
     public float speed;
     public float moveSmoothTime = .3f;
     public float steering;
@@ -25,13 +25,10 @@ public class PlayerMovement : MonoBehaviour
         //normalize and smooth vector
         targetDir.Normalize();
 
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            transform.Rotate(0f, 0.5f, 0f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            transform.Rotate(0f, -0.5f, 0f);
+        if(Input.GetAxisRaw("Horizontal") > 0) {
+        	transform.Rotate(0f, 0.5f, 0f);
+        } else if(Input.GetAxisRaw("Horizontal") < 0) {
+        	transform.Rotate(0f, -0.5f, 0f);
         }
 
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
@@ -42,4 +39,5 @@ public class PlayerMovement : MonoBehaviour
 
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/velocity", velocity.magnitude * 10);
     }
+
 }
