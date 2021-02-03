@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         count = 0;
         setCountText();
 
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/test", 1);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/on", 1);
     }
 
     private void FixedUpdate()
@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     void setCountText()
     {
         countText.text = "Count: " + count.ToString();
@@ -65,4 +66,5 @@ public class GameManager : MonoBehaviour
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/trigger", count);
         //*************
     }
+
 }

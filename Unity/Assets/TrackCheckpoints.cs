@@ -9,6 +9,10 @@ public class TrackCheckpoints : MonoBehaviour
     public int laps = 0;
     private Transform checkpointsTransform;
 
+    [SerializeField]
+    private Material wrongCheckpoint = null, rightCheckpoint = null;
+
+
     private void Awake()
     {
         checkpointsTransform = GetComponent<Transform>();
@@ -26,13 +30,16 @@ public class TrackCheckpoints : MonoBehaviour
 
     public void CheckpointReached(CheckpointSingle checkpoint)
     {
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/checkpoint", 0);
-
         //right checkpoint
         if (checkpointList.IndexOf(checkpoint) == nextCheckpointIndex)
         {
-            Debug.Log("Right");
+            checkpoint.GetComponent<MeshRenderer>().material = wrongCheckpoint;
+
+            Debug.Log(nextCheckpointIndex);
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/checkpoint", nextCheckpointIndex);
             nextCheckpointIndex = (nextCheckpointIndex + 1) % checkpointList.Count;
+
+            checkpointsTransform.GetChild(nextCheckpointIndex).GetComponent<MeshRenderer>().material = rightCheckpoint;
 
             if (nextCheckpointIndex == 1)
             {
