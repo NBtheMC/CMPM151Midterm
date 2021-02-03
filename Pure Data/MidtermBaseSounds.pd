@@ -1,4 +1,4 @@
-#N canvas 1912 -8 1920 997 10;
+#N canvas -8 -8 1920 997 10;
 #X text 177 277 creation arguments are OSC address;
 #X text 179 238 set message to change OSC address;
 #X text 164 48 1 Set IP Address : network address;
@@ -249,13 +249,13 @@
 #X text 353 399 0 when Unity is not on;
 #X text 352 425 1 when it starts up;
 #X obj 1440 262 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4600 1;
+-1 -1 3300 1;
 #X obj 550 272 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5000 1;
+-1 -1 2300 1;
 #X floatatom 1434 409 5 0 0 0 - - -;
 #X floatatom 558 447 5 0 0 0 - - -;
 #X obj 756 576 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4380 1;
+-1 -1 3800 1;
 #X floatatom 758 756 5 0 0 0 - - -;
 #X obj 304 435 r on;
 #X obj 261 431 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -272,6 +272,12 @@
 #X obj 616 166 * 750;
 #X obj 1335 444 *~;
 #X obj 866 895 *~;
+#X obj 1479 178 loadbang;
+#X msg 1476 222 0.3;
+#X obj 536 175 loadbang;
+#X msg 533 219 0.4;
+#X msg 747 529 0.5;
+#X obj 750 485 loadbang;
 #X connect 6 0 10 0;
 #X connect 8 0 9 0;
 #X connect 10 0 13 0;
@@ -368,3 +374,9 @@
 #X connect 100 0 43 1;
 #X connect 101 0 38 0;
 #X connect 101 0 38 1;
+#X connect 102 0 103 0;
+#X connect 103 0 84 0;
+#X connect 104 0 105 0;
+#X connect 105 0 85 0;
+#X connect 106 0 88 0;
+#X connect 107 0 106 0;
